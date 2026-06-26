@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.js",
+      "use": "@vercel/node",
+      "config": {
+        "maxLambdaSize": "50mb",
+        "maxDuration": 60
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.js"
+    }
+  ],
+  "env": {
+    "BASE_URL": "https://api.elynn.my.id",
+    "CLOUDINARY_CLOUD_NAME": "dzwnqqgtj",
+    "CLOUDINARY_API_KEY": "988742149597121",
+    "CLOUDINARY_API_SECRET": "eOPBiExbRgLEJVnr0pC1DDOO-Do"
+  }
+}
